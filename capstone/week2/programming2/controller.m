@@ -15,7 +15,6 @@ function u = controller(params, t, X)
   p = [0,0]';
   p(1) = l*cos(theta1) + l*cos(theta1+theta2);
   p(2) = l*sin(theta1) + l*sin(theta1+theta2);
-  
   e = p - params.traj(t);
   
   J = [-l*sin(theta1) - l*sin(theta1+theta2) , -l*sin(theta1+theta2);
@@ -23,7 +22,5 @@ function u = controller(params, t, X)
   
  u = -kp*J'*e - kd*[dtheta1; dtheta2];
     
-  
-  
 end
 
